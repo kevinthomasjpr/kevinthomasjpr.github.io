@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kevin Thomas James Paul Raj · Engineering Student</title>
+  <meta name="description" content="Kevin Thomas James Paul Raj: M.Sc. engineering student at TU Berlin with a B.E. in Mechanical Engineering. Testing, data analysis and simulation of real systems.">
+  <meta name="theme-color" content="#0c0d0f">
+  <meta property="og:title" content="Kevin Thomas James Paul Raj · Engineering Student">
+  <meta property="og:description" content="Engineering student who tests, analyses and models real systems.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="backdrop-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <span class="brand-name">Kevin Thomas James Paul Raj</span>
+      <span class="brand-role" data-i18n="brand.role">Testing · Data Analysis · Simulation</span>
+    </a>
+
+    <nav class="pill" aria-label="Sections">
+      <span class="pill-indicator" aria-hidden="true"></span>
+      <a href="#work" data-section="work" data-i18n="nav.work">Work</a>
+      <a href="#info" data-section="info" data-i18n="nav.info">Info</a>
+    </nav>
+
+    <div class="actions">
+      <a class="link" data-link="linkedin" href="https://www.linkedin.com/in/kevin-thomas-j" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="link hide-sm" data-link="github" href="https://github.com/jkevinthomas4321" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="link" data-cv href="assets/Kevin_Thomas_CV_EN.pdf" target="_blank" rel="noopener"><span data-i18n="nav.cv">CV</span> <span class="arrow" aria-hidden="true">↗</span></a>
+      <button class="lang" type="button" aria-label="Switch language">
+        <span class="lang-knob" aria-hidden="true"></span>
+        <span class="lang-opt" data-opt="en">EN</span>
+        <span class="lang-opt" data-opt="de">DE</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero wrap">
+      <div class="hero-art" aria-hidden="true"><svg id="hero-art" viewBox="0 0 640 560" preserveAspectRatio="xMidYMid slice"></svg></div>
+      <p class="kicker reveal" data-i18n="hero.kicker"></p>
+      <h1 class="hero-title reveal" data-i18n-html="hero.title"></h1>
+      <p class="hero-sub reveal" data-i18n="hero.sub"></p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#work"><span data-i18n="hero.cta1"></span> <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" data-cv href="assets/Kevin_Thomas_CV_EN.pdf" target="_blank" rel="noopener"><span data-i18n="hero.cta2"></span> <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="status reveal"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.status"></span></p>
+
+      <div class="monitor-stage reveal">
+        <div class="monitor" id="monitor">
+          <div class="monitor-bar">
+            <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
+            <span class="monitor-file" data-i18n="chart.file"></span>
+            <span class="monitor-tag" data-i18n="chart.tag"></span>
+          </div>
+          <div class="monitor-body">
+            <div class="chart-area">
+              <div class="legend">
+                <span class="lg lg-exp" data-i18n="chart.expected"></span>
+                <span class="lg lg-meas" data-i18n="chart.measured"></span>
+              </div>
+              <div class="chart-wrap">
+                <svg id="chart" viewBox="0 0 600 260" role="img" aria-labelledby="chart-cap"></svg>
+                <div class="chart-note"><span data-i18n="chart.note"></span></div>
+              </div>
+              <p class="chart-cap" id="chart-cap" data-i18n="chart.caption"></p>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><strong data-i18n="chart.kpi1v"></strong><span data-i18n="chart.kpi1l"></span></div>
+              <div class="kpi"><strong data-i18n="chart.kpi2v"></strong><span data-i18n="chart.kpi2l"></span></div>
+              <div class="kpi"><strong data-i18n="chart.kpi3v"></strong><span data-i18n="chart.kpi3l"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section wrap" id="work" data-observe="work">
+      <div class="section-head reveal">
+        <h2 data-i18n="work.title"></h2>
+        <p data-i18n="work.sub"></p>
+      </div>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <!-- Info -->
+    <section class="section wrap" id="info" data-observe="info">
+      <div class="section-head reveal">
+        <h2 data-i18n="info.title"></h2>
+      </div>
+
+      <div class="about reveal">
+        <h3 class="label" data-i18n="info.aboutTitle"></h3>
+        <p class="about-text" data-i18n="info.about"></p>
+      </div>
+
+      <div class="block reveal">
+        <h3 class="label" data-i18n="info.approachTitle"></h3>
+        <div class="steps" id="steps"></div>
+      </div>
+
+      <div class="block reveal">
+        <h3 class="label" data-i18n="info.expTitle"></h3>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+
+      <div class="block reveal">
+        <h3 class="label" data-i18n="info.skillsTitle"></h3>
+        <div class="skills" id="skills"></div>
+      </div>
+
+      <div class="facts reveal">
+        <div class="fact">
+          <h3 class="label" data-i18n="info.langTitle"></h3>
+          <ul class="plain" id="languages"></ul>
+        </div>
+        <div class="fact">
+          <h3 class="label" data-i18n="info.certTitle"></h3>
+          <ul class="plain" id="certs"></ul>
+        </div>
+        <div class="fact fact-wide">
+          <h3 class="label" data-i18n="info.pubTitle"></h3>
+          <ul class="plain" id="pubs"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact wrap" id="contact">
+      <div class="contact-card reveal">
+        <h2 class="contact-title" data-i18n-html="contact.title"></h2>
+        <p class="contact-sub" data-i18n="contact.sub"></p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" data-link="email" href="#"><span data-i18n="contact.email"></span></a>
+          <a class="btn btn-ghost" data-link="linkedin" href="#" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" data-link="github" href="#" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="permit" data-i18n="contact.permit"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span>© <span id="year">2026</span> Kevin Thomas James Paul Raj</span>
+    <span data-i18n="footer.made"></span>
+  </footer>
+
+  <!-- Project case study sheet -->
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet-backdrop" data-close></div>
+    <article class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1">
+      <div class="sheet-top">
+        <button class="sheet-back" type="button" data-close><span aria-hidden="true">←</span> <span data-i18n="sheet.back"></span></button>
+      </div>
+      <div class="sheet-body" id="sheet-body"></div>
+    </article>
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
