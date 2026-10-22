@@ -16,10 +16,10 @@ window.SITE_CONTENT = {
       title: "Kevin Thomas James Paul Raj · Engineering Student",
       cvFile: "",
       brand: { role: "Testing · Data Analysis · Simulation" },
-      nav: { work: "Work", info: "Info", cv: "CV", lang: "Switch to German" },
+      nav: { work: "Work", why: "Why me", info: "Info", cv: "CV", lang: "Switch to German" },
       hero: {
         kicker: "B.E. Mechanical Engineering · M.Sc. student at TU Berlin",
-        title: "Engineering student who <em>tests, analyses and models</em> real systems.",
+        title: "Engineering student with a curiosity for developing <em>better products with data and AI.</em>",
         sub: "Based in Berlin. I collect and analyse data, understand and model how systems behave, and use the results to support engineering design decisions.",
         cta1: "See projects",
         cta2: "Download CV",
@@ -65,9 +65,33 @@ window.SITE_CONTENT = {
         permit: "Based in Berlin · Student residence permit valid until 2029"
       },
       footer: { made: "Built with plain HTML, CSS and JavaScript." },
+      why: {
+        title: "Why <em>me</em>",
+        hint: "Five reasons to work with me. Peel off a note to see each one.",
+        see: "See why",
+        reset: "Stick them back",
+        noteLabel: "Reveal reason",
+        peel: "Click to peel",
+        peelTouch: "Tap to peel",
+        lookingLabel: "What I’m looking for:",
+        looking: "a curious team where I can <em>learn as much as possible</em>, working on real systems."
+      },
       mail: { subject: "Contact via your website", nothing: "No email app opened?", copy: "Copy address", copied: "Copied", gmail: "Open in Gmail" },
       viz: { inverters: "44 inverters", load: "heat load", speed: "pump speed", limit: "45 °C limit", margin: "margin", time: "fast-charge time" }
     },
+
+    reasons: [
+      { n: "01", icon: "path", word: "Independent", target: "work",
+        proof: "I started four engineering projects on my own and took each one from the first question to a published result on GitHub." },
+      { n: "02", icon: "search", word: "Curious", target: "solar",
+        proof: "I don’t stop at “it underperforms”. In my solar analysis I traced about 90 % of a plant’s loss to one cause: inverters switching off together at midday." },
+      { n: "03", icon: "bulb", word: "Creative & hands‑on", target: "cad",
+        proof: "I like turning ideas into parts: a jet engine assembly in PTC Creo, and a 3D-printed pill-reminder prototype for elderly care, built as a team during my bachelor’s." },
+      { n: "04", icon: "check", word: "Engineering mindset", target: "ev",
+        proof: "I check before I trust. Validation caught a 10× scaling error in solar data and a Kelvin/Celsius bug that first put my EV battery at 315 °C." },
+      { n: "05", icon: "case", word: "Industry experience", target: "exp:mitsogo",
+        proof: "Two years in Quality Assurance at a software company, with deadlines, a team and real customer data, and a promotion to the core root-cause analysis team." }
+    ],
 
     approach: [
       { n: "01", t: "Question first", d: "Define what “performing as expected” means before touching the data, then write one query or test per question." },
@@ -82,7 +106,7 @@ window.SITE_CONTENT = {
         points: ["Thermodynamics, heat transfer, dynamic modelling in MATLAB/Simulink/Simscape, data science for energy system modelling, refrigeration."]
       },
       {
-        period: "2022 – 2024", title: "Software Engineer, Quality Assurance",
+        id: "mitsogo", period: "2022 – 2024", title: "Software Engineer, Quality Assurance",
         org: "Mitsogo Technologies", place: "Chennai, India",
         points: [
           "Learned the mobile device management product end to end and turned features under development into flowcharts and visual maps, making them easier for the team to understand and test.",
@@ -189,7 +213,9 @@ window.SITE_CONTENT = {
           { v: "1.08×", l: "charge rate at which the 45 °C limit is crossed" },
           { v: "≈ 13 °C", l: "swing from the specific-heat assumption, more than double a ±20 % resistance error" }
         ],
-        findings: [],
+        findings: [
+          "A Kelvin/Celsius unit bug, which first gave a pack temperature of 315 °C, was caught because it did not match the hand-calculated range of about 20–45 °C."
+        ],
         note: "Passive air cooling and a fixed nominal voltage are assumed. The pack’s specific heat is not publicly sourced, so two literature values were tested.",
         repo: "https://github.com/jkevinthomas4321/EV-battery-thermal-behavior-during-fast-charging"
       },
@@ -218,10 +244,10 @@ window.SITE_CONTENT = {
       title: "Kevin Thomas James Paul Raj · Ingenieurstudent",
       cvFile: "",
       brand: { role: "Test · Datenanalyse · Simulation" },
-      nav: { work: "Projekte", info: "Info", cv: "Lebenslauf", lang: "Auf Englisch umschalten" },
+      nav: { work: "Projekte", why: "Warum ich", info: "Info", cv: "Lebenslauf", lang: "Auf Englisch umschalten" },
       hero: {
         kicker: "B.E. Maschinenbau · M.Sc.-Student an der TU Berlin",
-        title: "Ingenieurstudent, der reale Systeme <em>testet, analysiert und modelliert.</em>",
+        title: "Ingenieurstudent mit Neugier darauf, <em>mit Daten und KI bessere Produkte</em> zu entwickeln.",
         sub: "Wohnhaft in Berlin. Ich erhebe und analysiere Daten, verstehe und modelliere das Verhalten von Systemen und unterstütze mit den Ergebnissen technische Designentscheidungen.",
         cta1: "Projekte ansehen",
         cta2: "Lebenslauf herunterladen",
@@ -267,9 +293,33 @@ window.SITE_CONTENT = {
         permit: "Wohnhaft in Berlin · Aufenthaltserlaubnis zum Studium bis 2029"
       },
       footer: { made: "Gebaut mit HTML, CSS und JavaScript." },
+      why: {
+        title: "Warum <em>ich</em>",
+        hint: "Fünf Gründe, mit mir zu arbeiten. Ziehen Sie einen Zettel ab, um ihn zu sehen.",
+        see: "Beleg ansehen",
+        reset: "Zettel wieder aufkleben",
+        noteLabel: "Grund aufdecken",
+        peel: "Zum Abziehen klicken",
+        peelTouch: "Zum Abziehen tippen",
+        lookingLabel: "Was ich suche:",
+        looking: "ein neugieriges Team, in dem ich <em>so viel wie möglich lernen</em> kann, an echten Systemen."
+      },
       mail: { subject: "Kontakt über Ihre Website", nothing: "Kein E-Mail-Programm geöffnet?", copy: "Adresse kopieren", copied: "Kopiert", gmail: "In Gmail öffnen" },
       viz: { inverters: "44 Wechselrichter", load: "Wärmelast", speed: "Pumpendrehzahl", limit: "Grenze 45 °C", margin: "Abstand", time: "Ladezeit" }
     },
+
+    reasons: [
+      { n: "01", icon: "path", word: "Selbstständig", target: "work",
+        proof: "Ich habe vier Ingenieurprojekte aus eigenem Antrieb begonnen und jedes von der ersten Frage bis zum veröffentlichten Ergebnis auf GitHub umgesetzt." },
+      { n: "02", icon: "search", word: "Neugierig", target: "solar",
+        proof: "Bei „läuft schlechter“ höre ich nicht auf. In meiner Solaranalyse habe ich rund 90 % des Verlusts einer Anlage auf eine Ursache zurückgeführt: Wechselrichter, die mittags gleichzeitig abschalten." },
+      { n: "03", icon: "bulb", word: "Kreativ & praktisch", target: "cad",
+        proof: "Ich mache aus Ideen gern echte Teile: eine Triebwerksbaugruppe in PTC Creo und einen 3D-gedruckten Prototyp einer Tablettenerinnerung für die Altenpflege, im Team während des Bachelors gebaut." },
+      { n: "04", icon: "check", word: "Ingenieursdenken", target: "ev",
+        proof: "Ich prüfe, bevor ich vertraue. Die Validierung fand einen Skalierungsfehler um den Faktor 10 in Solardaten und einen Kelvin/Celsius-Fehler, durch den meine EV-Batterie zuerst 315 °C erreichte." },
+      { n: "05", icon: "case", word: "Industrieerfahrung", target: "exp:mitsogo",
+        proof: "Zwei Jahre Qualitätssicherung in einem Softwareunternehmen, mit Deadlines, Team und echten Kundendaten, und eine Beförderung ins Kernteam für Ursachenanalyse." }
+    ],
 
     approach: [
       { n: "01", t: "Erst die Frage", d: "Festlegen, was „läuft wie erwartet“ bedeutet, bevor ich die Daten anfasse, und dann pro Frage eine Abfrage oder einen Test schreiben." },
@@ -284,7 +334,7 @@ window.SITE_CONTENT = {
         points: ["Thermodynamik, Wärmeübertragung, dynamische Modellierung in MATLAB/Simulink/Simscape, Data Science für die Energiesystemmodellierung, Kältetechnik."]
       },
       {
-        period: "2022 – 2024", title: "Software Engineer, Qualitätssicherung",
+        id: "mitsogo", period: "2022 – 2024", title: "Software Engineer, Qualitätssicherung",
         org: "Mitsogo Technologies", place: "Chennai, Indien",
         points: [
           "Das Mobile-Device-Management-Produkt vollständig erarbeitet und Funktionen in der Entwicklung als Flussdiagramme und visuelle Übersichten aufbereitet, damit das Team sie leichter verstehen und testen konnte.",
@@ -391,7 +441,9 @@ window.SITE_CONTENT = {
           { v: "1,08×", l: "Laderate, ab der die Grenze von 45 °C überschritten wird" },
           { v: "≈ 13 °C", l: "Spanne durch die Annahme zur Wärmekapazität, mehr als doppelt so viel wie ±20 % Widerstandsfehler" }
         ],
-        findings: [],
+        findings: [
+          "Ein Kelvin/Celsius-Fehler, der zuerst eine Packtemperatur von 315 °C ergab, fiel auf, weil er nicht zum handgerechneten Bereich von etwa 20–45 °C passte."
+        ],
         note: "Angenommen sind passive Luftkühlung und eine feste Nennspannung. Die Wärmekapazität des Packs ist nicht öffentlich belegt, daher wurden zwei Literaturwerte getestet.",
         repo: "https://github.com/jkevinthomas4321/EV-battery-thermal-behavior-during-fast-charging"
       },

@@ -162,7 +162,7 @@ p { margin: 0; }
   font-size: clamp(26px, 3.4vw, 46px); line-height: 1.15; font-weight: 500; letter-spacing: -0.025em;
   color: #dcdde0;
 }
-.hero-title em, .hero-tagline em, .contact-title em {
+.hero-title em, .hero-tagline em, .contact-title em, .section-head h2 em, .looking em {
   font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em;
   background: linear-gradient(100deg, #ffd08a 0%, var(--accent) 45%, #ff8a5c 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -465,3 +465,117 @@ p { margin: 0; }
 .mail-help-addr { font-size: 15px; font-weight: 600; user-select: all; }
 .mail-help-actions { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
 @keyframes mailIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ============ Why me: sticky notes ============ */
+.board { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; padding-top: 12px; }
+.slot { position: relative; display: grid; min-height: 290px; }
+.slot > * { grid-area: 1 / 1; }
+
+.reason {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 22px 20px 20px; border-radius: 16px;
+  background: var(--surface); border: 1px dashed var(--line-2);
+  opacity: 0; transform: scale(0.96);
+  transition: opacity 0.6s var(--ease) 0.25s, transform 0.7s var(--ease-out) 0.25s, border-color 0.4s;
+}
+.is-peeled .reason { opacity: 1; transform: none; border-style: solid; border-color: var(--line); }
+.reason-n { font: 500 12px ui-monospace, Consolas, monospace; color: var(--accent); }
+.reason-word { font-size: 19px; font-weight: 600; letter-spacing: -0.015em; }
+.reason-proof { font-size: 14px; line-height: 1.55; color: var(--muted); }
+.reason-see {
+  margin-top: auto; padding: 8px 0 0; align-self: flex-start;
+  background: none; border: 0; cursor: pointer;
+  font: 600 14px var(--font); color: var(--accent);
+}
+.reason-see .arrow { display: inline-block; transition: transform 0.3s var(--ease-out); }
+.reason-see:hover .arrow { transform: translateX(4px); }
+
+.note {
+  position: relative; z-index: 2; cursor: pointer;
+  display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;
+  padding: 22px 20px; border: 0; border-radius: 3px 3px 3px 22px;
+  background: var(--note-bg); color: #2a2318;
+  font-family: var(--font); text-align: left;
+  transform: rotate(var(--tilt));
+  box-shadow: 0 18px 30px -14px rgba(0, 0, 0, 0.75), inset 0 -2px 0 rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+/* curled bottom-left corner */
+.note::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 26px; height: 26px;
+  border-radius: 0 0 0 22px;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.18) 0%, rgba(255, 255, 255, 0.35) 55%, transparent 56%);
+  transition: width 0.4s var(--ease-out), height 0.4s var(--ease-out);
+}
+.note:hover { transform: rotate(calc(var(--tilt) * 0.3)) translateY(-6px); box-shadow: 0 28px 40px -16px rgba(0, 0, 0, 0.8); }
+.note:hover::after { width: 40px; height: 40px; }
+.note:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.note-tape {
+  position: absolute; top: -11px; left: 50%; width: 74px; height: 22px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255, 255, 255, 0.26); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.note-n { font-size: 40px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; opacity: 0.85; }
+.note-icon { width: 46px; height: 46px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; }
+
+.note-1 { --note-bg: linear-gradient(165deg, #f5d391 0%, #e6b868 100%); }
+.note-2 { --note-bg: linear-gradient(165deg, #bcdcef 0%, #93c1de 100%); }
+.note-3 { --note-bg: linear-gradient(165deg, #f4bba3 0%, #e4977c 100%); }
+.note-4 { --note-bg: linear-gradient(165deg, #c6e5cb 0%, #9ccea7 100%); }
+.note-5 { --note-bg: linear-gradient(165deg, #d6caf0 0%, #b5a5e0 100%); }
+
+/* peel: lift one corner, then fall with a spin and fade */
+.note.falling { pointer-events: none; z-index: 6; transform-origin: 18% 0%; animation: noteFall 0.95s cubic-bezier(0.5, 0, 0.75, 0.4) forwards; }
+@keyframes noteFall {
+  0%   { transform: rotate(var(--tilt)); opacity: 1; }
+  22%  { transform: rotate(calc(var(--tilt) - 9deg)) translate(-4px, -12px); opacity: 1; }
+  100% { transform: rotate(calc(var(--tilt) + 30deg)) translate(36px, 380px); opacity: 0; }
+}
+.note.sticking { animation: noteStick 0.55s var(--ease-out) both; }
+@keyframes noteStick {
+  0%   { opacity: 0; transform: rotate(var(--tilt)) translateY(-28px) scale(1.06); }
+  100% { opacity: 1; transform: rotate(var(--tilt)); }
+}
+
+.board-foot { display: flex; justify-content: center; min-height: 44px; margin-top: 22px; }
+.looking {
+  margin-top: 36px; padding-top: 30px; border-top: 1px solid var(--line);
+  max-width: 50ch; font-size: clamp(19px, 2vw, 26px); line-height: 1.45; letter-spacing: -0.015em; color: #d4d5d8;
+}
+.looking strong { font-weight: 600; color: var(--text); }
+
+/* "See why" on the industry note highlights the Mitsogo entry */
+.tl-item.flash { animation: tlFlash 2.6s var(--ease); border-radius: 14px; }
+@keyframes tlFlash { 0%, 35% { background: rgba(255, 181, 71, 0.12); } 100% { background: transparent; } }
+
+@media (max-width: 960px) {
+  .board { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 760px) {
+  .board { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .slot { min-height: 300px; }
+  .slot:last-child { grid-column: 1 / -1; justify-self: center; width: calc(50% - 7px); }
+  .note { padding: 18px 16px; }
+  .note-n { font-size: 32px; }
+  .reason { padding: 18px 16px; }
+  .reason-proof { font-size: 13.5px; }
+}
+
+/* three menu items: keep each on one line, tighter on phones */
+.pill a { white-space: nowrap; }
+@media (max-width: 760px) { .pill a { padding: 8px 15px; font-size: 14.5px; } }
+
+/* Why me sits right under the intro; the solar chart follows it */
+.section-why { padding-top: clamp(72px, 10vh, 112px); }
+.chart-section { padding-top: clamp(24px, 4vh, 48px); }
+.chart-section .monitor-stage { margin-top: 0; }
+
+/* "Click to peel" label on each note */
+.note-foot { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.note-peel {
+  font-size: 12.5px; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap;
+  padding: 5px 9px; border-radius: 999px; background: rgba(42, 35, 24, 0.12);
+}
+.note-peel-arrow { display: inline-block; transition: transform 0.35s var(--ease-out); }
+.note:hover .note-peel-arrow { transform: translate(2px, -2px); }
+@media (max-width: 760px) { .note-peel { font-size: 11.5px; padding: 4px 8px; } .note-icon { width: 36px; height: 36px; } }

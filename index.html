@@ -7,7 +7,7 @@
   <meta name="description" content="Kevin Thomas James Paul Raj: M.Sc. engineering student at TU Berlin with a B.E. in Mechanical Engineering. Testing, data analysis and simulation of real systems.">
   <meta name="theme-color" content="#0c0d0f">
   <meta property="og:title" content="Kevin Thomas James Paul Raj · Engineering Student">
-  <meta property="og:description" content="Engineering student who tests, analyses and models real systems.">
+  <meta property="og:description" content="Engineering student with a curiosity for developing better products with data and AI.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,7 @@
 
     <nav class="pill" aria-label="Sections">
       <span class="pill-indicator" aria-hidden="true"></span>
+      <a href="#why" data-section="why" data-i18n="nav.why">Why me</a>
       <a href="#work" data-section="work" data-i18n="nav.work">Work</a>
       <a href="#info" data-section="info" data-i18n="nav.info">Info</a>
     </nav>
@@ -54,7 +55,23 @@
         <a class="btn btn-ghost" data-cv href="assets/Kevin_Thomas_CV_EN.pdf" target="_blank" rel="noopener"><span data-i18n="hero.cta2"></span> <span aria-hidden="true">↗</span></a>
       </div>
       <p class="status reveal"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.status"></span></p>
+    </section>
 
+    <!-- Why me: sticky notes that peel off to reveal a reason and its proof -->
+    <section class="section section-why wrap" id="why" data-observe="why">
+      <div class="section-head reveal">
+        <h2 data-i18n-html="why.title"></h2>
+        <p data-i18n="why.hint"></p>
+      </div>
+      <div class="board reveal" id="board"></div>
+      <div class="board-foot">
+        <button class="btn btn-ghost btn-sm" type="button" id="notes-reset" hidden><span aria-hidden="true">↺</span> <span data-i18n="why.reset"></span></button>
+      </div>
+      <p class="looking reveal"><strong data-i18n="why.lookingLabel"></strong> <span data-i18n-html="why.looking"></span></p>
+    </section>
+
+    <!-- Solar case-study teaser -->
+    <section class="wrap chart-section">
       <div class="monitor-stage reveal">
         <div class="monitor" id="monitor">
           <div class="monitor-bar">

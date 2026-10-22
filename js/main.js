@@ -162,7 +162,7 @@
     }).join("");
 
     $("#timeline").innerHTML = d.timeline.map(function (it) {
-      return '<li class="tl-item"><span class="tl-period">' + esc(it.period) + "</span><div>" +
+      return '<li class="tl-item"' + (it.id ? ' id="exp-' + it.id + '"' : "") + '><span class="tl-period">' + esc(it.period) + "</span><div>" +
         '<div class="tl-title">' + esc(it.title) + "</div>" +
         '<div class="tl-org">' + esc(it.org) + " · " + esc(it.place) + "</div>" +
         '<ul class="tl-points">' + it.points.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" +
@@ -188,6 +188,99 @@
         '<div class="f-sub">' + esc(p.venue) + "</div></li>";
     }).join("");
   }
+
+  /* ---------- Why me: sticky notes ---------- */
+  // Each note covers a reason card. Clicking peels the note off (it falls and fades),
+  // revealing the reason and a "See why" link to the proof. State survives language switches.
+  var noteIcons = {
+    path: '<path d="M6 30 C14 30 12 14 22 14 S30 6 32 6"/><circle cx="6" cy="30" r="3"/><path d="M27 4 L33 6 L31 12"/>',
+    search: '<circle cx="15" cy="15" r="9"/><path d="M22 22 L32 32"/>',
+    bulb: '<path d="M13 26 C13 21 8 19 8 13 a10 10 0 0 1 20 0 c0 6 -5 8 -5 13 Z"/><path d="M14 30 H22 M15 34 H21"/>',
+    check: '<circle cx="18" cy="18" r="13"/><path d="M11 18 L16 23 L25 13"/>',
+    "case": '<rect x="5" y="11" width="26" height="19" rx="3"/><path d="M13 11 V7 H23 V11 M5 19 H31"/>'
+  };
+  var noteTilt = ["-3deg", "2.5deg", "-1.5deg", "3deg", "-2.5deg"];
+  var peeled = [false, false, false, false, false];
+  var touchOnly = window.matchMedia("(hover: none)").matches;
+
+  function renderNotes() {
+    $("#board").innerHTML = L().reasons.map(function (r, i) {
+      return '<div class="slot' + (peeled[i] ? " is-peeled" : "") + '" data-i="' + i + '">' +
+        '<div class="reason">' +
+          '<span class="reason-n">' + esc(r.n) + "</span>" +
+          '<h3 class="reason-word">' + esc(r.word) + "</h3>" +
+          '<p class="reason-proof">' + esc(r.proof) + "</p>" +
+          '<button type="button" class="reason-see" data-target="' + esc(r.target) + '"' + (peeled[i] ? "" : ' tabindex="-1"') + ">" +
+            esc(t("why.see")) + ' <span class="arrow" aria-hidden="true">→</span></button>' +
+        "</div>" +
+        (peeled[i] ? "" :
+          '<button type="button" class="note note-' + (i + 1) + '" style="--tilt:' + noteTilt[i] + '" aria-label="' +
+            esc(t("why.noteLabel") + " " + r.n + ": " + r.word) + '">' +
+            '<span class="note-tape" aria-hidden="true"></span>' +
+            '<span class="note-n" aria-hidden="true">' + esc(r.n) + "</span>" +
+            '<span class="note-foot" aria-hidden="true">' +
+              '<svg class="note-icon" viewBox="0 0 36 36">' + noteIcons[r.icon] + "</svg>" +
+              '<span class="note-peel">' + esc(t(touchOnly ? "why.peelTouch" : "why.peel")) + ' <span class="note-peel-arrow">↗</span></span>' +
+            "</span>" +
+          "</button>") +
+        "</div>";
+    }).join("");
+    $("#notes-reset").hidden = peeled.indexOf(false) !== -1;
+  }
+
+  function peel(slot, byKeyboard) {
+    var i = +slot.getAttribute("data-i");
+    var note = $(".note", slot);
+    if (!note || note.classList.contains("falling")) return;
+    peeled[i] = true;
+    slot.classList.add("is-peeled");
+    note.classList.add("falling");
+    var see = $(".reason-see", slot);
+    see.removeAttribute("tabindex");
+    var done = function () { if (note.parentNode) note.remove(); };
+    note.addEventListener("animationend", done, { once: true });
+    setTimeout(done, 1400);
+    // keyboard users continue on the revealed link; mouse users get no focus ring
+    if (byKeyboard) setTimeout(function () { see.focus({ preventScroll: true }); }, 450);
+    if (peeled.indexOf(false) === -1) {
+      setTimeout(function () { $("#notes-reset").hidden = false; }, 700);
+    }
+  }
+
+  function stickBack() {
+    peeled = [false, false, false, false, false];
+    renderNotes();
+    $all("#board .note").forEach(function (n, k) {
+      n.style.animationDelay = k * 70 + "ms";
+      n.classList.add("sticking");
+    });
+    var first = $("#board .note");
+    if (first) first.focus({ preventScroll: true });
+  }
+
+  function showProof(target) {
+    if (target === "work") {
+      $("#work").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    } else if (target.indexOf("exp:") === 0) {
+      var el = $("#exp-" + target.slice(4));
+      if (!el) return;
+      el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+      el.classList.remove("flash");
+      void el.offsetWidth; // restart the highlight animation
+      el.classList.add("flash");
+    } else {
+      openedFromPage = true;
+      location.hash = "#/work/" + target;
+    }
+  }
+
+  $("#board").addEventListener("click", function (e) {
+    var see = e.target.closest(".reason-see");
+    if (see) { showProof(see.getAttribute("data-target")); return; }
+    var note = e.target.closest(".note");
+    if (note) peel(note.parentNode, e.detail === 0);
+  });
+  $("#notes-reset").addEventListener("click", stickBack);
 
   function renderSheet(p) {
     var parts = [];
@@ -238,6 +331,7 @@
     btn.setAttribute("aria-label", t("nav.lang"));
     renderCards();
     renderInfo();
+    renderNotes();
     if (currentId) { var p = findProject(currentId); if (p) renderSheet(p); }
     if (rendered) $all(".reveal").forEach(function (el) { el.classList.add("in"); });
     rendered = true;
@@ -375,7 +469,7 @@
     var visible = {};
     var secObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { visible[e.target.getAttribute("data-observe")] = e.isIntersecting; });
-      var next = visible.info ? "info" : visible.work ? "work" : null;
+      var next = visible.info ? "info" : visible.work ? "work" : visible.why ? "why" : null;
       if (next !== activeSection) { activeSection = next; positionIndicator(); }
     }, { rootMargin: "-45% 0px -50% 0px" });
     $all("[data-observe]").forEach(function (s) { secObserver.observe(s); });
