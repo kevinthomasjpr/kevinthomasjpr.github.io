@@ -38,7 +38,7 @@ window.SITE_CONTENT = {
       },
       work: {
         title: "Selected work",
-        sub: "Personal engineering projects. Open a card for the full story: the question, the method and what came out of it."
+        sub: "Personal projects. Open a card for the full story: the question, the method and what came out of it."
       },
       card: { open: "Read case study" },
       sheet: {
@@ -82,11 +82,11 @@ window.SITE_CONTENT = {
 
     reasons: [
       { n: "01", icon: "path", word: "Independent", target: "work",
-        proof: "I started four engineering projects on my own and took each one from the first question to a published result on GitHub." },
+        proof: "I started five projects on my own and took each one from the first question to a published result on GitHub." },
       { n: "02", icon: "search", word: "Curious", target: "solar",
         proof: "I don’t stop at “it underperforms”. In my solar analysis I traced about 90 % of a plant’s loss to one cause: inverters switching off together at midday." },
-      { n: "03", icon: "bulb", word: "Creative & hands‑on", target: "cad",
-        proof: "I like turning ideas into parts: a jet engine assembly in PTC Creo, and a 3D-printed pill-reminder prototype for elderly care, built as a team during my bachelor’s." },
+      { n: "03", icon: "bulb", word: "Creative & hands‑on", target: "vocab",
+        proof: "I like turning ideas into things people can use: a German vocabulary game I built from scratch and later rebuilt with Claude Code, a jet engine assembly in PTC Creo, and a 3D-printed pill-reminder prototype built as a team." },
       { n: "04", icon: "check", word: "Engineering mindset", target: "ev",
         proof: "I check before I trust. Validation caught a 10× scaling error in solar data and a Kelvin/Celsius bug that first put my EV battery at 315 °C." },
       { n: "05", icon: "case", word: "Industry experience", target: "exp:mitsogo",
@@ -220,6 +220,28 @@ window.SITE_CONTENT = {
         repo: "https://github.com/jkevinthomas4321/EV-battery-thermal-behavior-during-fast-charging"
       },
       {
+        id: "vocab",
+        title: "Wortschatz: German Vocabulary Game",
+        meta: "Personal project · 2025, rebuilt Oct 2026",
+        tagline: "A vocabulary game where a word only enters your diary once you have proven you know it. Built from scratch in Streamlit, then rebuilt with Claude Code.",
+        tags: ["Python", "pandas", "NiceGUI", "pytest", "Claude Code"],
+        overview: "While learning German I wanted a game that rewards proof, not effort. I built the first version from scratch in Streamlit in 2025. In 2026 I rebuilt it with Claude Code on NiceGUI: the same game logic, in a more interactive interface with its own learning statistics.",
+        approach: [
+          "Designed the rules: a word enters the diary only after every question about it is answered correctly. Missed words wait in a second-chance list until a re-test is passed.",
+          "Four modes (Learn, Test, Second chance, Diary) with flip cards and typed answers in both directions. Nouns need their article, verbs their three forms.",
+          "Every answer is logged, and a Progress page analyses the log with pandas, with 95 % confidence intervals and plain-language findings.",
+          "For the rebuild, the game rules live in one small module with no interface code, so they are tested without a browser."
+        ],
+        results: [
+          { v: "195", l: "automated tests, including a simulated browser playing the real app" },
+          { v: "515", l: "common German words in the bundled word list" },
+          { v: "4", l: "game modes: Learn, Test, Second chance, Diary" }
+        ],
+        findings: [],
+        note: "Runs locally on your own computer. The 2026 version was designed and implemented with Claude Code, as stated in the README. The first Streamlit version is kept on its own branch.",
+        repo: "https://github.com/jkevinthomas4321/My_German_Vocab_Game"
+      },
+      {
         id: "cad",
         title: "Jet Engine CAD Assembly",
         meta: "Personal project · Sep 2025",
@@ -266,7 +288,7 @@ window.SITE_CONTENT = {
       },
       work: {
         title: "Ausgewählte Projekte",
-        sub: "Eigene Ingenieurprojekte. Öffnen Sie eine Karte für die ganze Geschichte: die Frage, die Methode und das Ergebnis."
+        sub: "Eigene Projekte. Öffnen Sie eine Karte für die ganze Geschichte: die Frage, die Methode und das Ergebnis."
       },
       card: { open: "Zur Fallstudie" },
       sheet: {
@@ -310,11 +332,11 @@ window.SITE_CONTENT = {
 
     reasons: [
       { n: "01", icon: "path", word: "Selbstständig", target: "work",
-        proof: "Ich habe vier Ingenieurprojekte aus eigenem Antrieb begonnen und jedes von der ersten Frage bis zum veröffentlichten Ergebnis auf GitHub umgesetzt." },
+        proof: "Ich habe fünf Projekte aus eigenem Antrieb begonnen und jedes von der ersten Frage bis zum veröffentlichten Ergebnis auf GitHub umgesetzt." },
       { n: "02", icon: "search", word: "Neugierig", target: "solar",
         proof: "Bei „läuft schlechter“ höre ich nicht auf. In meiner Solaranalyse habe ich rund 90 % des Verlusts einer Anlage auf eine Ursache zurückgeführt: Wechselrichter, die mittags gleichzeitig abschalten." },
-      { n: "03", icon: "bulb", word: "Kreativ & praktisch", target: "cad",
-        proof: "Ich mache aus Ideen gern echte Teile: eine Triebwerksbaugruppe in PTC Creo und einen 3D-gedruckten Prototyp einer Tablettenerinnerung für die Altenpflege, im Team während des Bachelors gebaut." },
+      { n: "03", icon: "bulb", word: "Kreativ & praktisch", target: "vocab",
+        proof: "Ich mache aus Ideen gern etwas Nutzbares: ein Deutsch-Vokabelspiel, von Grund auf gebaut und später mit Claude Code neu aufgebaut, eine Triebwerksbaugruppe in PTC Creo und einen 3D-gedruckten Prototyp einer Tablettenerinnerung, im Team gebaut." },
       { n: "04", icon: "check", word: "Ingenieursdenken", target: "ev",
         proof: "Ich prüfe, bevor ich vertraue. Die Validierung fand einen Skalierungsfehler um den Faktor 10 in Solardaten und einen Kelvin/Celsius-Fehler, durch den meine EV-Batterie zuerst 315 °C erreichte." },
       { n: "05", icon: "case", word: "Industrieerfahrung", target: "exp:mitsogo",
@@ -446,6 +468,28 @@ window.SITE_CONTENT = {
         ],
         note: "Angenommen sind passive Luftkühlung und eine feste Nennspannung. Die Wärmekapazität des Packs ist nicht öffentlich belegt, daher wurden zwei Literaturwerte getestet.",
         repo: "https://github.com/jkevinthomas4321/EV-battery-thermal-behavior-during-fast-charging"
+      },
+      {
+        id: "vocab",
+        title: "Wortschatz: Deutsch-Vokabelspiel",
+        meta: "Eigenes Projekt · 2025, neu gebaut Okt. 2026",
+        tagline: "Ein Vokabelspiel, in dem ein Wort erst ins Tagebuch kommt, wenn Sie bewiesen haben, dass Sie es können. Von Grund auf in Streamlit gebaut, dann mit Claude Code neu aufgebaut.",
+        tags: ["Python", "pandas", "NiceGUI", "pytest", "Claude Code"],
+        overview: "Beim Deutschlernen wollte ich ein Spiel, das Können belohnt, nicht Aufwand. Die erste Version habe ich 2025 von Grund auf in Streamlit gebaut. 2026 habe ich sie mit Claude Code auf NiceGUI neu aufgebaut: dieselbe Spiellogik, in einer interaktiveren Oberfläche mit eigener Lernstatistik.",
+        approach: [
+          "Die Regeln entworfen: Ein Wort kommt erst ins Tagebuch, wenn jede Frage dazu richtig beantwortet ist. Verpasste Wörter warten in einer Liste für die zweite Chance, bis ein Wiederholungstest bestanden ist.",
+          "Vier Modi (Lernen, Test, Zweite Chance, Tagebuch) mit Lernkarten und getippten Antworten in beide Richtungen. Nomen brauchen ihren Artikel, Verben ihre drei Formen.",
+          "Jede Antwort wird protokolliert, und eine Fortschrittsseite wertet das Protokoll mit pandas aus, mit 95- %-Konfidenzintervallen und verständlichen Befunden.",
+          "Beim Neuaufbau liegen die Spielregeln in einem kleinen Modul ohne Oberflächencode, damit sie ohne Browser getestet werden."
+        ],
+        results: [
+          { v: "195", l: "automatisierte Tests, auch mit einem simulierten Browser, der die echte App spielt" },
+          { v: "515", l: "häufige deutsche Wörter in der mitgelieferten Wortliste" },
+          { v: "4", l: "Spielmodi: Lernen, Test, Zweite Chance, Tagebuch" }
+        ],
+        findings: [],
+        note: "Läuft lokal auf dem eigenen Computer. Die Version von 2026 wurde mit Claude Code entworfen und umgesetzt, wie im README angegeben. Die erste Streamlit-Version liegt in einem eigenen Branch.",
+        repo: "https://github.com/jkevinthomas4321/My_German_Vocab_Game"
       },
       {
         id: "cad",

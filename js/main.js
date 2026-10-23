@@ -130,7 +130,31 @@
         "</svg>";
     }
   };
+  visuals.vocab = function () {
+    // a flip card (German side) over a second card (English side), plus diary progress
+    var bars = "";
+    for (var i = 0; i < 10; i++) {
+      bars += '<rect x="' + (262 + i * 11) + '" y="' + (176 - [6, 9, 12, 16, 15, 21, 26, 30, 34, 40][i]) +
+        '" width="7" height="' + [6, 9, 12, 16, 15, 21, 26, 30, 34, 40][i] + '" rx="2" fill="rgba(95,220,160,' + (0.35 + i * 0.06).toFixed(2) + ')"/>';
+    }
+    return '<svg viewBox="0 0 400 250" aria-hidden="true">' +
+      '<g transform="rotate(7 150 125)"><rect x="70" y="58" width="150" height="104" rx="12" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.18)"/>' +
+      '<text class="v-txt" x="145" y="117" text-anchor="middle">the apple</text></g>' +
+      '<g transform="rotate(-5 140 120)"><rect x="56" y="70" width="160" height="110" rx="12" fill="#1f2a26" stroke="rgba(95,220,160,.55)" stroke-width="1.5"/>' +
+      '<text class="v-txt" x="136" y="108" text-anchor="middle" style="fill:#7fe3b4">der</text>' +
+      '<text class="v-txt-strong" x="136" y="138" text-anchor="middle">Apfel</text>' +
+      '<text class="v-txt" x="136" y="162" text-anchor="middle">die Äpfel</text></g>' +
+      '<text class="v-txt" x="262" y="94">diary</text>' + bars +
+      '<line x1="258" x2="372" y1="180" y2="180" stroke="rgba(255,255,255,.12)"/>' +
+      '<g transform="translate(262 196)"><rect width="22" height="18" rx="4" fill="none" stroke="rgba(255,255,255,.35)"/><text class="v-txt" x="11" y="13" text-anchor="middle">ä</text>' +
+      '<rect x="28" width="22" height="18" rx="4" fill="none" stroke="rgba(255,255,255,.35)"/><text class="v-txt" x="39" y="13" text-anchor="middle">ö</text>' +
+      '<rect x="56" width="22" height="18" rx="4" fill="none" stroke="rgba(255,255,255,.35)"/><text class="v-txt" x="67" y="13" text-anchor="middle">ü</text>' +
+      '<rect x="84" width="22" height="18" rx="4" fill="none" stroke="rgba(255,255,255,.35)"/><text class="v-txt" x="95" y="13" text-anchor="middle">ß</text></g>' +
+      "</svg>";
+  };
+
   var tints = {
+    vocab: "rgba(95,220,160,.15)",
     solar: "rgba(255,181,71,.18)",
     cooling: "rgba(98,200,255,.16)",
     ev: "rgba(255,138,92,.16)",

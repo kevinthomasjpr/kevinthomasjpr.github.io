@@ -579,3 +579,10 @@ p { margin: 0; }
 .note-peel-arrow { display: inline-block; transition: transform 0.35s var(--ease-out); }
 .note:hover .note-peel-arrow { transform: translate(2px, -2px); }
 @media (max-width: 760px) { .note-peel { font-size: 11.5px; padding: 4px 8px; } .note-icon { width: 36px; height: 36px; } }
+
+/* odd number of project cards: the last one spans the full row as a wide card */
+@media (min-width: 761px) {
+  .cards > .card:last-child:nth-child(odd) { grid-column: 1 / -1; flex-direction: row; }
+  .cards > .card:last-child:nth-child(odd) .card-visual { flex: 0 0 50%; aspect-ratio: 16 / 9; border-bottom: 0; border-right: 1px solid var(--line); }
+  .cards > .card:last-child:nth-child(odd) .card-body { justify-content: center; padding: 32px 36px; }
+}
