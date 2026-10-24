@@ -586,3 +586,14 @@ p { margin: 0; }
   .cards > .card:last-child:nth-child(odd) .card-visual { flex: 0 0 50%; aspect-ratio: 16 / 9; border-bottom: 0; border-right: 1px solid var(--line); }
   .cards > .card:last-child:nth-child(odd) .card-body { justify-content: center; padding: 32px 36px; }
 }
+
+/* Motto above "What I'm looking for" */
+.motto { margin-top: 36px; padding-top: 34px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+.motto-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); }
+.motto-text { font-size: clamp(30px, 4vw, 52px); font-weight: 600; line-height: 1.08; letter-spacing: -0.035em; color: var(--text); max-width: 22ch; }
+.motto-text em {
+  font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; padding-right: 0.06em;
+  background: linear-gradient(100deg, #ffd08a 0%, var(--accent) 45%, #ff8a5c 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.motto + .looking { margin-top: 18px; padding-top: 0; border-top: 0; font-size: clamp(17px, 1.6vw, 21px); color: var(--muted); }

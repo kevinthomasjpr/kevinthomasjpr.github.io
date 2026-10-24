@@ -15,7 +15,7 @@ window.SITE_CONTENT = {
     ui: {
       title: "Kevin Thomas James Paul Raj · Engineering Student",
       cvFile: "",
-      brand: { role: "Testing · Data Analysis · Simulation" },
+      brand: { role: "Product Data · Quality · Data Analysis" },
       nav: { work: "Work", why: "Why me", info: "Info", cv: "CV", lang: "Switch to German" },
       hero: {
         kicker: "B.E. Mechanical Engineering · M.Sc. student at TU Berlin",
@@ -49,7 +49,7 @@ window.SITE_CONTENT = {
       info: {
         title: "Info",
         aboutTitle: "About",
-        about: "I am an M.Sc. student in Process, Energy and Environmental Systems Engineering at TU Berlin and hold a bachelor’s degree in Mechanical Engineering. Before my Master’s, I spent two years in Quality Assurance at Mitsogo Technologies, validating a software product against its expected behaviour and analysing customer data to find the root causes of issues. Today I combine data analysis in Python and SQL with system modelling in MATLAB, Simulink and Simscape. My approach is the same in every project: define the question, check the data, model the system and explain the cause. I am looking for a working-student position or a Master’s thesis where these skills support real engineering decisions.",
+        about: "I am an M.Sc. student in Process, Energy and Environmental Systems Engineering at TU Berlin and hold a bachelor’s degree in Mechanical Engineering. Before my Master’s, I spent two years in Quality Assurance at Mitsogo Technologies, validating a software product against its expected behaviour and analysing customer data to find the root causes of issues. Today I combine data analysis in Python, SQL and Power BI with my mechanical engineering background in CAD and product design, to turn product and quality data into engineering decisions. My approach is the same in every project: define the question, check the data, model the system and explain the cause. I am looking for a working-student position or a Master’s thesis where these skills support real engineering decisions.",
         approachTitle: "How I work",
         expTitle: "Experience & education",
         skillsTitle: "Skills",
@@ -60,7 +60,7 @@ window.SITE_CONTENT = {
       },
       contact: {
         title: "Let’s <em>talk.</em>",
-        sub: "I’m looking for a working-student position or a Master’s thesis where I work with data from real machines, plants and test rigs.",
+        sub: "I’m looking for a working-student position or a Master’s thesis where I work with product, engineering and quality data.",
         email: "Email me",
         permit: "Based in Berlin · Student residence permit valid until 2029"
       },
@@ -73,8 +73,10 @@ window.SITE_CONTENT = {
         noteLabel: "Reveal reason",
         peel: "Click to peel",
         peelTouch: "Tap to peel",
+        mottoLabel: "My motto",
+        motto: "Learn and <em>contribute</em> as much as possible.",
         lookingLabel: "What I’m looking for:",
-        looking: "a curious team where I can <em>learn as much as possible</em>, working on real systems."
+        looking: "a curious team where I can learn, contribute and become a valuable part of the team."
       },
       mail: { subject: "Contact via your website", nothing: "No email app opened?", copy: "Copy address", copied: "Copied", gmail: "Open in Gmail" },
       viz: { inverters: "44 inverters", load: "heat load", speed: "pump speed", limit: "45 °C limit", margin: "margin", time: "fast-charge time" }
@@ -103,22 +105,22 @@ window.SITE_CONTENT = {
       {
         period: "2024 – now", title: "M.Sc. Process, Energy and Environmental Systems Engineering",
         org: "TU Berlin", place: "Berlin",
-        points: ["Thermodynamics, heat transfer, dynamic modelling in MATLAB/Simulink/Simscape, data science for energy system modelling, refrigeration."]
+        points: ["Data science for energy system modelling, thermodynamics, heat transfer, refrigeration, dynamic modelling in MATLAB/Simulink/Simscape."]
       },
       {
-        id: "mitsogo", period: "2022 – 2024", title: "Software Engineer, Quality Assurance",
+        id: "mitsogo", period: "Jul 2022 – Sep 2024", title: "Software Engineer, Quality Assurance",
         org: "Mitsogo Technologies", place: "Chennai, India",
         points: [
-          "Learned the mobile device management product end to end and turned features under development into flowcharts and visual maps, making them easier for the team to understand and test.",
-          "Built and automated data-driven validation pipelines that compare system behaviour against expected performance.",
-          "Promoted to the core root-cause analysis team: mapped the links between features and analysed customer data to show which features caused the most issues.",
-          "Compared new feature versions and competitor products to identify improvements, and improved the onboarding material so new team members could learn the product more easily."
+          "Quickly promoted to the core root-cause analysis team: analysed customer issues, resolved them fast and gave the product development team clear feedback on which features caused the most issues.",
+          "Built and automated data-driven validation pipelines in Python and SQL that compare system behaviour against expected performance.",
+          "Compared new feature versions and competitor products to identify improvements.",
+          "Learned the mobile device management product end to end, turned features under development into flowcharts and visual maps for the team, and improved the onboarding material so new team members could learn the product more easily."
         ]
       },
       {
-        period: "2022", title: "Research Assistant",
+        period: "2022", title: "Research Assistant & Co-author",
         org: "SSN College of Engineering", place: "Chennai, India",
-        points: ["Experimental testing and analysis for two peer-reviewed papers on shape memory alloys."]
+        points: ["Ran the experimental testing and analysis under a professor’s guidance and co-authored two peer-reviewed papers on shape memory alloys."]
       },
       {
         period: "2018 – 2022", title: "B.E. Mechanical Engineering",
@@ -132,9 +134,9 @@ window.SITE_CONTENT = {
 
     skills: [
       { name: "Data & analysis", items: ["Python", "pandas", "NumPy", "SciPy", "scikit-learn", "matplotlib", "SQL", "PostgreSQL", "Power BI", "Tableau", "Excel"] },
-      { name: "Modelling & simulation", items: ["MATLAB", "Simulink", "Simscape", "System identification", "Model validation", "Time-series analysis"] },
       { name: "Engineering & CAD", items: ["Heat transfer", "Thermodynamics", "SolidWorks", "PTC Creo", "Root-cause analysis"] },
-      { name: "Tools", items: ["Git", "pytest", "Jira", "ClickUp", "Power Apps", "Claude Code"] }
+      { name: "Tools", items: ["Git", "pytest", "Jira", "ClickUp", "Power Apps", "Claude Code"] },
+      { name: "Modelling & simulation", items: ["MATLAB", "Simulink", "Simscape", "System identification", "Model validation", "Time-series analysis"] }
     ],
 
     languages: [
@@ -171,6 +173,45 @@ window.SITE_CONTENT = {
         ],
         note: "Built on public Kaggle and NASA datasets. Root causes are inferred from operating data, not confirmed on site.",
         repo: "https://github.com/jkevinthomas4321/Solar_Battery_Performance_Monitor"
+      },
+      {
+        id: "cad",
+        title: "Jet Engine CAD Assembly",
+        meta: "Personal project · Sep 2025",
+        tagline: "Engine components and their assembly architecture, modelled in PTC Creo to understand how a complex machine fits together.",
+        tags: ["PTC Creo", "CAD", "Assembly"],
+        overview: "Reading about a jet engine is one thing; deciding where every part sits is another. I modelled the engine components and assembled them to understand the architecture of a complex mechanical system.",
+        approach: [
+          "Modelled the individual engine components in PTC Creo.",
+          "Built the assembly and its architecture from those parts.",
+          "Published the assembly together with other Creo parts and assemblies."
+        ],
+        results: [],
+        findings: [],
+        note: "",
+        repo: "https://github.com/jkevinthomas4321/CAD_Designs"
+      },
+      {
+        id: "vocab",
+        title: "Wortschatz: German Vocabulary Game",
+        meta: "Personal project · 2025, rebuilt Oct 2026",
+        tagline: "A vocabulary game where a word only enters your diary once you have proven you know it. Built from scratch in Streamlit, then rebuilt with Claude Code.",
+        tags: ["Python", "pandas", "NiceGUI", "pytest", "Claude Code"],
+        overview: "While learning German I wanted a game that rewards proof, not effort. I built the first version from scratch in Streamlit in 2025. In 2026 I rebuilt it with Claude Code on NiceGUI: the same game logic, in a more interactive interface with its own learning statistics.",
+        approach: [
+          "Designed the rules: a word enters the diary only after every question about it is answered correctly. Missed words wait in a second-chance list until a re-test is passed.",
+          "Four modes (Learn, Test, Second chance, Diary) with flip cards and typed answers in both directions. Nouns need their article, verbs their three forms.",
+          "Every answer is logged, and a Progress page analyses the log with pandas, with 95 % confidence intervals and plain-language findings.",
+          "For the rebuild, the game rules live in one small module with no interface code, so they are tested without a browser."
+        ],
+        results: [
+          { v: "195", l: "automated tests, including a simulated browser playing the real app" },
+          { v: "515", l: "common German words in the bundled word list" },
+          { v: "4", l: "game modes: Learn, Test, Second chance, Diary" }
+        ],
+        findings: [],
+        note: "Runs locally on your own computer. The 2026 version was designed and implemented with Claude Code, as stated in the README. The first Streamlit version is kept on its own branch.",
+        repo: "https://github.com/jkevinthomas4321/My_German_Vocab_Game"
       },
       {
         id: "cooling",
@@ -218,45 +259,6 @@ window.SITE_CONTENT = {
         ],
         note: "Passive air cooling and a fixed nominal voltage are assumed. The pack’s specific heat is not publicly sourced, so two literature values were tested.",
         repo: "https://github.com/jkevinthomas4321/EV-battery-thermal-behavior-during-fast-charging"
-      },
-      {
-        id: "vocab",
-        title: "Wortschatz: German Vocabulary Game",
-        meta: "Personal project · 2025, rebuilt Oct 2026",
-        tagline: "A vocabulary game where a word only enters your diary once you have proven you know it. Built from scratch in Streamlit, then rebuilt with Claude Code.",
-        tags: ["Python", "pandas", "NiceGUI", "pytest", "Claude Code"],
-        overview: "While learning German I wanted a game that rewards proof, not effort. I built the first version from scratch in Streamlit in 2025. In 2026 I rebuilt it with Claude Code on NiceGUI: the same game logic, in a more interactive interface with its own learning statistics.",
-        approach: [
-          "Designed the rules: a word enters the diary only after every question about it is answered correctly. Missed words wait in a second-chance list until a re-test is passed.",
-          "Four modes (Learn, Test, Second chance, Diary) with flip cards and typed answers in both directions. Nouns need their article, verbs their three forms.",
-          "Every answer is logged, and a Progress page analyses the log with pandas, with 95 % confidence intervals and plain-language findings.",
-          "For the rebuild, the game rules live in one small module with no interface code, so they are tested without a browser."
-        ],
-        results: [
-          { v: "195", l: "automated tests, including a simulated browser playing the real app" },
-          { v: "515", l: "common German words in the bundled word list" },
-          { v: "4", l: "game modes: Learn, Test, Second chance, Diary" }
-        ],
-        findings: [],
-        note: "Runs locally on your own computer. The 2026 version was designed and implemented with Claude Code, as stated in the README. The first Streamlit version is kept on its own branch.",
-        repo: "https://github.com/jkevinthomas4321/My_German_Vocab_Game"
-      },
-      {
-        id: "cad",
-        title: "Jet Engine CAD Assembly",
-        meta: "Personal project · Sep 2025",
-        tagline: "Engine components and their assembly architecture, modelled in PTC Creo to understand how a complex machine fits together.",
-        tags: ["PTC Creo", "CAD", "Assembly"],
-        overview: "Reading about a jet engine is one thing; deciding where every part sits is another. I modelled the engine components and assembled them to understand the architecture of a complex mechanical system.",
-        approach: [
-          "Modelled the individual engine components in PTC Creo.",
-          "Built the assembly and its architecture from those parts.",
-          "Published the assembly together with other Creo parts and assemblies."
-        ],
-        results: [],
-        findings: [],
-        note: "",
-        repo: "https://github.com/jkevinthomas4321/CAD_Designs"
       }
     ]
   },
@@ -265,7 +267,7 @@ window.SITE_CONTENT = {
     ui: {
       title: "Kevin Thomas James Paul Raj · Ingenieurstudent",
       cvFile: "",
-      brand: { role: "Test · Datenanalyse · Simulation" },
+      brand: { role: "Produktdaten · Qualität · Datenanalyse" },
       nav: { work: "Projekte", why: "Warum ich", info: "Info", cv: "Lebenslauf", lang: "Auf Englisch umschalten" },
       hero: {
         kicker: "B.E. Maschinenbau · M.Sc.-Student an der TU Berlin",
@@ -299,7 +301,7 @@ window.SITE_CONTENT = {
       info: {
         title: "Info",
         aboutTitle: "Über mich",
-        about: "Ich studiere im Master Process, Energy and Environmental Systems Engineering an der TU Berlin und habe einen Bachelor in Maschinenbau. Vor dem Master war ich zwei Jahre in der Qualitätssicherung bei Mitsogo Technologies: Ich habe ein Softwareprodukt gegen sein erwartetes Verhalten validiert und Kundendaten ausgewertet, um die Ursachen von Fehlern zu finden. Heute verbinde ich Datenanalyse in Python und SQL mit Systemmodellierung in MATLAB, Simulink und Simscape. Mein Vorgehen ist in jedem Projekt gleich: die Frage klären, die Daten prüfen, das System modellieren und die Ursache erklären. Ich suche eine Werkstudentenstelle oder eine Masterarbeit, in der diese Fähigkeiten echte technische Entscheidungen unterstützen.",
+        about: "Ich studiere im Master Process, Energy and Environmental Systems Engineering an der TU Berlin und habe einen Bachelor in Maschinenbau. Vor dem Master war ich zwei Jahre in der Qualitätssicherung bei Mitsogo Technologies: Ich habe ein Softwareprodukt gegen sein erwartetes Verhalten validiert und Kundendaten ausgewertet, um die Ursachen von Fehlern zu finden. Heute verbinde ich Datenanalyse in Python, SQL und Power BI mit meinem Maschinenbau-Hintergrund in CAD und Produktentwicklung, um aus Produkt- und Qualitätsdaten technische Entscheidungen abzuleiten. Mein Vorgehen ist in jedem Projekt gleich: die Frage klären, die Daten prüfen, das System modellieren und die Ursache erklären. Ich suche eine Werkstudentenstelle oder eine Masterarbeit, in der diese Fähigkeiten echte technische Entscheidungen unterstützen.",
         approachTitle: "Wie ich arbeite",
         expTitle: "Erfahrung & Ausbildung",
         skillsTitle: "Kenntnisse",
@@ -310,7 +312,7 @@ window.SITE_CONTENT = {
       },
       contact: {
         title: "Lassen Sie uns <em>sprechen.</em>",
-        sub: "Ich suche eine Werkstudentenstelle oder eine Masterarbeit, in der ich mit Daten echter Maschinen, Anlagen und Prüfstände arbeite.",
+        sub: "Ich suche eine Werkstudentenstelle oder eine Masterarbeit, in der ich mit Produkt-, Qualitäts- und technischen Daten arbeite.",
         email: "E-Mail schreiben",
         permit: "Wohnhaft in Berlin · Aufenthaltserlaubnis zum Studium bis 2029"
       },
@@ -323,8 +325,10 @@ window.SITE_CONTENT = {
         noteLabel: "Grund aufdecken",
         peel: "Zum Abziehen klicken",
         peelTouch: "Zum Abziehen tippen",
+        mottoLabel: "Mein Motto",
+        motto: "So viel wie möglich lernen und <em>beitragen</em>.",
         lookingLabel: "Was ich suche:",
-        looking: "ein neugieriges Team, in dem ich <em>so viel wie möglich lernen</em> kann, an echten Systemen."
+        looking: "ein neugieriges Team, in dem ich lernen, etwas beitragen und ein wertvoller Teil des Teams werden kann."
       },
       mail: { subject: "Kontakt über Ihre Website", nothing: "Kein E-Mail-Programm geöffnet?", copy: "Adresse kopieren", copied: "Kopiert", gmail: "In Gmail öffnen" },
       viz: { inverters: "44 Wechselrichter", load: "Wärmelast", speed: "Pumpendrehzahl", limit: "Grenze 45 °C", margin: "Abstand", time: "Ladezeit" }
@@ -353,22 +357,22 @@ window.SITE_CONTENT = {
       {
         period: "seit 2024", title: "M.Sc. Process, Energy and Environmental Systems Engineering",
         org: "TU Berlin", place: "Berlin",
-        points: ["Thermodynamik, Wärmeübertragung, dynamische Modellierung in MATLAB/Simulink/Simscape, Data Science für die Energiesystemmodellierung, Kältetechnik."]
+        points: ["Data Science für die Energiesystemmodellierung, Thermodynamik, Wärmeübertragung, Kältetechnik, dynamische Modellierung in MATLAB/Simulink/Simscape."]
       },
       {
-        id: "mitsogo", period: "2022 – 2024", title: "Software Engineer, Qualitätssicherung",
+        id: "mitsogo", period: "Juli 2022 – Sep. 2024", title: "Software Engineer, Qualitätssicherung",
         org: "Mitsogo Technologies", place: "Chennai, Indien",
         points: [
-          "Das Mobile-Device-Management-Produkt vollständig erarbeitet und Funktionen in der Entwicklung als Flussdiagramme und visuelle Übersichten aufbereitet, damit das Team sie leichter verstehen und testen konnte.",
-          "Datengetriebene Validierungspipelines aufgebaut und automatisiert, die das Systemverhalten mit der erwarteten Leistung vergleichen.",
-          "Beförderung ins Kernteam für Ursachenanalyse: Zusammenhänge zwischen Funktionen abgebildet und Kundendaten ausgewertet, um zu zeigen, welche Funktionen die meisten Fehler verursachen.",
-          "Neue Funktionsversionen und Konkurrenzprodukte verglichen, um Verbesserungen zu finden, und die Einarbeitungsunterlagen verbessert, damit neue Teammitglieder das Produkt leichter lernen konnten."
+          "Schnell ins Kernteam für Ursachenanalyse befördert: Kundenprobleme analysiert, zügig gelöst und der Produktentwicklung klares Feedback gegeben, welche Funktionen die meisten Fehler verursachen.",
+          "Datengetriebene Validierungspipelines in Python und SQL aufgebaut und automatisiert, die das Systemverhalten mit der erwarteten Leistung vergleichen.",
+          "Neue Funktionsversionen und Konkurrenzprodukte verglichen, um Verbesserungen zu finden.",
+          "Das Mobile-Device-Management-Produkt vollständig erarbeitet, Funktionen in der Entwicklung als Flussdiagramme und visuelle Übersichten für das Team aufbereitet und die Einarbeitungsunterlagen verbessert, damit neue Teammitglieder das Produkt leichter lernen konnten."
         ]
       },
       {
-        period: "2022", title: "Forschungsassistent",
+        period: "2022", title: "Forschungsassistent & Co-Autor",
         org: "SSN College of Engineering", place: "Chennai, Indien",
-        points: ["Experimentelle Versuche und Auswertung für zwei begutachtete Veröffentlichungen zu Formgedächtnislegierungen."]
+        points: ["Experimentelle Versuche und Auswertung unter Anleitung eines Professors durchgeführt und Co-Autor zweier begutachteter Veröffentlichungen zu Formgedächtnislegierungen."]
       },
       {
         period: "2018 – 2022", title: "B.E. Maschinenbau",
@@ -382,9 +386,9 @@ window.SITE_CONTENT = {
 
     skills: [
       { name: "Daten & Analyse", items: ["Python", "pandas", "NumPy", "SciPy", "scikit-learn", "matplotlib", "SQL", "PostgreSQL", "Power BI", "Tableau", "Excel"] },
-      { name: "Modellierung & Simulation", items: ["MATLAB", "Simulink", "Simscape", "Systemidentifikation", "Modellvalidierung", "Zeitreihenanalyse"] },
       { name: "Konstruktion & Grundlagen", items: ["Wärmeübertragung", "Thermodynamik", "SolidWorks", "PTC Creo", "Ursachenanalyse"] },
-      { name: "Werkzeuge", items: ["Git", "pytest", "Jira", "ClickUp", "Power Apps", "Claude Code"] }
+      { name: "Werkzeuge", items: ["Git", "pytest", "Jira", "ClickUp", "Power Apps", "Claude Code"] },
+      { name: "Modellierung & Simulation", items: ["MATLAB", "Simulink", "Simscape", "Systemidentifikation", "Modellvalidierung", "Zeitreihenanalyse"] }
     ],
 
     languages: [
@@ -421,6 +425,45 @@ window.SITE_CONTENT = {
         ],
         note: "Basiert auf öffentlichen Kaggle- und NASA-Datensätzen. Die Ursachen sind aus Betriebsdaten abgeleitet, nicht vor Ort bestätigt.",
         repo: "https://github.com/jkevinthomas4321/Solar_Battery_Performance_Monitor"
+      },
+      {
+        id: "cad",
+        title: "Jet Engine CAD Assembly",
+        meta: "Eigenes Projekt · Sep. 2025",
+        tagline: "Triebwerkskomponenten und ihre Baugruppenstruktur, in PTC Creo modelliert, um zu verstehen, wie eine komplexe Maschine zusammenpasst.",
+        tags: ["PTC Creo", "CAD", "Baugruppe"],
+        overview: "Über ein Strahltriebwerk zu lesen ist das eine, für jedes Teil zu entscheiden, wo es sitzt, das andere. Ich habe die Komponenten modelliert und zusammengebaut, um die Architektur eines komplexen mechanischen Systems zu verstehen.",
+        approach: [
+          "Die einzelnen Triebwerkskomponenten in PTC Creo modelliert.",
+          "Daraus die Baugruppe und ihre Struktur aufgebaut.",
+          "Die Baugruppe zusammen mit weiteren Creo-Teilen und -Baugruppen veröffentlicht."
+        ],
+        results: [],
+        findings: [],
+        note: "",
+        repo: "https://github.com/jkevinthomas4321/CAD_Designs"
+      },
+      {
+        id: "vocab",
+        title: "Wortschatz: Deutsch-Vokabelspiel",
+        meta: "Eigenes Projekt · 2025, neu gebaut Okt. 2026",
+        tagline: "Ein Vokabelspiel, in dem ein Wort erst ins Tagebuch kommt, wenn Sie bewiesen haben, dass Sie es können. Von Grund auf in Streamlit gebaut, dann mit Claude Code neu aufgebaut.",
+        tags: ["Python", "pandas", "NiceGUI", "pytest", "Claude Code"],
+        overview: "Beim Deutschlernen wollte ich ein Spiel, das Können belohnt, nicht Aufwand. Die erste Version habe ich 2025 von Grund auf in Streamlit gebaut. 2026 habe ich sie mit Claude Code auf NiceGUI neu aufgebaut: dieselbe Spiellogik, in einer interaktiveren Oberfläche mit eigener Lernstatistik.",
+        approach: [
+          "Die Regeln entworfen: Ein Wort kommt erst ins Tagebuch, wenn jede Frage dazu richtig beantwortet ist. Verpasste Wörter warten in einer Liste für die zweite Chance, bis ein Wiederholungstest bestanden ist.",
+          "Vier Modi (Lernen, Test, Zweite Chance, Tagebuch) mit Lernkarten und getippten Antworten in beide Richtungen. Nomen brauchen ihren Artikel, Verben ihre drei Formen.",
+          "Jede Antwort wird protokolliert, und eine Fortschrittsseite wertet das Protokoll mit pandas aus, mit 95- %-Konfidenzintervallen und verständlichen Befunden.",
+          "Beim Neuaufbau liegen die Spielregeln in einem kleinen Modul ohne Oberflächencode, damit sie ohne Browser getestet werden."
+        ],
+        results: [
+          { v: "195", l: "automatisierte Tests, auch mit einem simulierten Browser, der die echte App spielt" },
+          { v: "515", l: "häufige deutsche Wörter in der mitgelieferten Wortliste" },
+          { v: "4", l: "Spielmodi: Lernen, Test, Zweite Chance, Tagebuch" }
+        ],
+        findings: [],
+        note: "Läuft lokal auf dem eigenen Computer. Die Version von 2026 wurde mit Claude Code entworfen und umgesetzt, wie im README angegeben. Die erste Streamlit-Version liegt in einem eigenen Branch.",
+        repo: "https://github.com/jkevinthomas4321/My_German_Vocab_Game"
       },
       {
         id: "cooling",
@@ -468,45 +511,6 @@ window.SITE_CONTENT = {
         ],
         note: "Angenommen sind passive Luftkühlung und eine feste Nennspannung. Die Wärmekapazität des Packs ist nicht öffentlich belegt, daher wurden zwei Literaturwerte getestet.",
         repo: "https://github.com/jkevinthomas4321/EV-battery-thermal-behavior-during-fast-charging"
-      },
-      {
-        id: "vocab",
-        title: "Wortschatz: Deutsch-Vokabelspiel",
-        meta: "Eigenes Projekt · 2025, neu gebaut Okt. 2026",
-        tagline: "Ein Vokabelspiel, in dem ein Wort erst ins Tagebuch kommt, wenn Sie bewiesen haben, dass Sie es können. Von Grund auf in Streamlit gebaut, dann mit Claude Code neu aufgebaut.",
-        tags: ["Python", "pandas", "NiceGUI", "pytest", "Claude Code"],
-        overview: "Beim Deutschlernen wollte ich ein Spiel, das Können belohnt, nicht Aufwand. Die erste Version habe ich 2025 von Grund auf in Streamlit gebaut. 2026 habe ich sie mit Claude Code auf NiceGUI neu aufgebaut: dieselbe Spiellogik, in einer interaktiveren Oberfläche mit eigener Lernstatistik.",
-        approach: [
-          "Die Regeln entworfen: Ein Wort kommt erst ins Tagebuch, wenn jede Frage dazu richtig beantwortet ist. Verpasste Wörter warten in einer Liste für die zweite Chance, bis ein Wiederholungstest bestanden ist.",
-          "Vier Modi (Lernen, Test, Zweite Chance, Tagebuch) mit Lernkarten und getippten Antworten in beide Richtungen. Nomen brauchen ihren Artikel, Verben ihre drei Formen.",
-          "Jede Antwort wird protokolliert, und eine Fortschrittsseite wertet das Protokoll mit pandas aus, mit 95- %-Konfidenzintervallen und verständlichen Befunden.",
-          "Beim Neuaufbau liegen die Spielregeln in einem kleinen Modul ohne Oberflächencode, damit sie ohne Browser getestet werden."
-        ],
-        results: [
-          { v: "195", l: "automatisierte Tests, auch mit einem simulierten Browser, der die echte App spielt" },
-          { v: "515", l: "häufige deutsche Wörter in der mitgelieferten Wortliste" },
-          { v: "4", l: "Spielmodi: Lernen, Test, Zweite Chance, Tagebuch" }
-        ],
-        findings: [],
-        note: "Läuft lokal auf dem eigenen Computer. Die Version von 2026 wurde mit Claude Code entworfen und umgesetzt, wie im README angegeben. Die erste Streamlit-Version liegt in einem eigenen Branch.",
-        repo: "https://github.com/jkevinthomas4321/My_German_Vocab_Game"
-      },
-      {
-        id: "cad",
-        title: "Jet Engine CAD Assembly",
-        meta: "Eigenes Projekt · Sep. 2025",
-        tagline: "Triebwerkskomponenten und ihre Baugruppenstruktur, in PTC Creo modelliert, um zu verstehen, wie eine komplexe Maschine zusammenpasst.",
-        tags: ["PTC Creo", "CAD", "Baugruppe"],
-        overview: "Über ein Strahltriebwerk zu lesen ist das eine, für jedes Teil zu entscheiden, wo es sitzt, das andere. Ich habe die Komponenten modelliert und zusammengebaut, um die Architektur eines komplexen mechanischen Systems zu verstehen.",
-        approach: [
-          "Die einzelnen Triebwerkskomponenten in PTC Creo modelliert.",
-          "Daraus die Baugruppe und ihre Struktur aufgebaut.",
-          "Die Baugruppe zusammen mit weiteren Creo-Teilen und -Baugruppen veröffentlicht."
-        ],
-        results: [],
-        findings: [],
-        note: "",
-        repo: "https://github.com/jkevinthomas4321/CAD_Designs"
       }
     ]
   },
